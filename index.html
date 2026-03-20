@@ -1,0 +1,413 @@
+<!DOCTYPE html>
+<!-- saved from url=(0060)file:///C:/Users/user/Downloads/indonesian_restaurant_4.html -->
+<html lang="zh-TW"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>印尼美食 – 彰化福興</title>
+<link href="./index_files/css2" rel="stylesheet">
+<style>
+:root {
+  --saffron:#D4801A; --gold:#C9A84C; --gold-light:#F0C96A;
+  --terracotta:#B85C38; --deep-red:#8B2E1A;
+  --cream:#FDF3E3; --warm-white:#FFF8F0;
+  --dark:#1E0F00; --dark2:#2C1500; --brown:#4A2500;
+}
+*{margin:0;padding:0;box-sizing:border-box;}
+html{scroll-behavior:smooth;}
+body{font-family:'Noto Sans TC',sans-serif;background:var(--cream);color:var(--dark);overflow-x:hidden;}
+
+/* BATIK PATTERN */
+.batik-bg{
+  background-color:var(--dark2);
+  background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='80' height='80'%3E%3Crect width='80' height='80' fill='%232C1500'/%3E%3Ccircle cx='40' cy='40' r='18' fill='none' stroke='%23C9A84C' stroke-width='1.2' opacity='.35'/%3E%3Ccircle cx='40' cy='40' r='10' fill='none' stroke='%23C9A84C' stroke-width='.8' opacity='.25'/%3E%3Ccircle cx='40' cy='40' r='3' fill='%23C9A84C' opacity='.4'/%3E%3Cpath d='M40 22 L44 30 L40 28 L36 30 Z' fill='%23C9A84C' opacity='.3'/%3E%3Cpath d='M40 58 L44 50 L40 52 L36 50 Z' fill='%23C9A84C' opacity='.3'/%3E%3Cpath d='M22 40 L30 44 L28 40 L30 36 Z' fill='%23C9A84C' opacity='.3'/%3E%3Cpath d='M58 40 L50 44 L52 40 L50 36 Z' fill='%23C9A84C' opacity='.3'/%3E%3Ccircle cx='0' cy='0' r='4' fill='%23C9A84C' opacity='.18'/%3E%3Ccircle cx='80' cy='0' r='4' fill='%23C9A84C' opacity='.18'/%3E%3Ccircle cx='0' cy='80' r='4' fill='%23C9A84C' opacity='.18'/%3E%3Ccircle cx='80' cy='80' r='4' fill='%23C9A84C' opacity='.18'/%3E%3Cline x1='0' y1='40' x2='22' y2='40' stroke='%23C9A84C' stroke-width='.6' opacity='.2'/%3E%3Cline x1='58' y1='40' x2='80' y2='40' stroke='%23C9A84C' stroke-width='.6' opacity='.2'/%3E%3Cline x1='40' y1='0' x2='40' y2='22' stroke='%23C9A84C' stroke-width='.6' opacity='.2'/%3E%3Cline x1='40' y1='58' x2='40' y2='80' stroke='%23C9A84C' stroke-width='.6' opacity='.2'/%3E%3C/svg%3E");
+}
+
+/* NAV */
+nav{position:fixed;top:0;left:0;right:0;z-index:100;display:flex;align-items:center;justify-content:space-between;padding:.7rem 1.5rem;transition:background .3s;}
+nav.scrolled{background:rgba(30,15,0,.96);box-shadow:0 2px 20px rgba(0,0,0,.4);}
+.nav-logo{display:flex;align-items:center;gap:.5rem;font-family:'Cinzel Decorative',serif;color:var(--gold-light);font-size:1rem;font-weight:700;}
+.nav-links{display:flex;gap:1.4rem;list-style:none;}
+.nav-links a{color:rgba(255,255,255,.85);text-decoration:none;font-size:.82rem;font-weight:500;letter-spacing:.5px;transition:color .2s;}
+.nav-links a:hover{color:var(--gold-light);}
+.hamburger{display:none;flex-direction:column;gap:5px;cursor:pointer;background:none;border:none;padding:4px;}
+.hamburger span{display:block;width:24px;height:2px;background:#fff;border-radius:2px;}
+.mobile-menu{display:none;position:fixed;top:52px;left:0;right:0;background:rgba(30,15,0,.98);z-index:99;flex-direction:column;padding:1rem 1.5rem 1.5rem;gap:.75rem;}
+.mobile-menu.open{display:flex;}
+.mobile-menu a{color:rgba(255,255,255,.85);text-decoration:none;font-size:.95rem;padding:.5rem 0;border-bottom:1px solid rgba(201,168,76,.2);}
+
+/* HERO */
+.hero{min-height:100vh;position:relative;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;padding:7rem 1.5rem 4rem;overflow:hidden;}
+.hero-bg{
+  position:absolute;inset:0;z-index:0;
+  background:
+    linear-gradient(180deg,rgba(30,15,0,.6) 0%,rgba(30,15,0,.25) 45%,rgba(30,15,0,.78) 100%),
+    url('https://images.unsplash.com/photo-1504674900247-0877df9cc836?w=1600&q=85') center/cover no-repeat;
+}
+.hero-wave{position:absolute;bottom:0;left:0;right:0;z-index:1;pointer-events:none;}
+.hero-wave svg{display:block;width:100%;}
+.hero-content{position:relative;z-index:2;}
+.hero-ornament{display:inline-block;font-size:3rem;margin-bottom:1rem;filter:drop-shadow(0 4px 14px rgba(201,168,76,.6));animation:float 3s ease-in-out infinite;}
+@keyframes float{0%,100%{transform:translateY(0);}50%{transform:translateY(-9px);}}
+.hero-badge{display:inline-block;background:rgba(201,168,76,.18);border:1px solid rgba(201,168,76,.5);color:var(--gold-light);font-size:.72rem;letter-spacing:3px;text-transform:uppercase;padding:.4rem 1.5rem;border-radius:30px;margin-bottom:1.5rem;backdrop-filter:blur(4px);}
+.hero h1{font-family:'Cinzel Decorative',serif;font-size:clamp(2.2rem,9vw,5.5rem);color:#fff;line-height:1.15;font-weight:900;text-shadow:0 4px 32px rgba(0,0,0,.5),0 0 80px rgba(212,128,26,.3);margin-bottom:.4rem;}
+.hero-id{font-family:'Libre Baskerville',serif;font-style:italic;font-size:clamp(1rem,3vw,1.5rem);color:var(--gold-light);letter-spacing:2px;margin-bottom:.6rem;}
+.hero-sub{color:rgba(255,255,255,.75);font-size:.9rem;letter-spacing:1.5px;margin-bottom:2.5rem;}
+.hero-cta{display:flex;gap:1rem;flex-wrap:wrap;justify-content:center;}
+.btn{padding:.75rem 2rem;border-radius:3px;font-size:.88rem;font-weight:700;cursor:pointer;transition:all .25s;text-decoration:none;display:inline-block;letter-spacing:.5px;font-family:'Noto Sans TC',sans-serif;}
+.btn-gold{background:linear-gradient(135deg,var(--gold),var(--gold-light));color:var(--dark2);border:none;box-shadow:0 4px 20px rgba(201,168,76,.4);}
+.btn-gold:hover{transform:translateY(-2px);box-shadow:0 8px 30px rgba(201,168,76,.5);}
+.btn-outline-w{background:transparent;color:#fff;border:2px solid rgba(255,255,255,.6);}
+.btn-outline-w:hover{background:rgba(255,255,255,.1);transform:translateY(-2px);}
+
+/* SECTION BASE */
+section{padding:5rem 1.5rem;}
+.container{max-width:1100px;margin:0 auto;}
+.sec-head{text-align:center;margin-bottom:2.5rem;}
+.sec-kicker{display:inline-block;font-size:.72rem;letter-spacing:3px;text-transform:uppercase;color:var(--saffron);font-weight:700;margin-bottom:.6rem;}
+.sec-title{font-family:'Cinzel Decorative',serif;font-size:clamp(1.4rem,4vw,2.3rem);font-weight:700;color:var(--brown);line-height:1.2;margin-bottom:.5rem;}
+.sec-title.light{color:var(--gold-light);}
+.orn-line{display:flex;align-items:center;justify-content:center;gap:.75rem;margin-top:.8rem;}
+.orn-line::before,.orn-line::after{content:'';flex:1;max-width:80px;height:1.5px;background:linear-gradient(90deg,transparent,var(--gold));}
+.orn-line::after{background:linear-gradient(90deg,var(--gold),transparent);}
+.orn-line span{color:var(--gold);font-size:1rem;}
+
+/* INFO */
+.info-sec{background:var(--warm-white);position:relative;}
+.info-sec::before{content:'';position:absolute;top:0;left:0;right:0;height:5px;background:linear-gradient(90deg,var(--deep-red),var(--saffron),var(--gold),var(--saffron),var(--deep-red));}
+.info-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(210px,1fr));gap:1.5rem;}
+.info-card{background:#fff;border-radius:3px;padding:2rem 1.5rem;text-align:center;border:1px solid rgba(201,168,76,.2);box-shadow:0 4px 24px rgba(30,15,0,.06);position:relative;overflow:hidden;transition:transform .25s,box-shadow .25s;}
+.info-card::before{content:'';position:absolute;top:0;left:0;right:0;height:4px;background:linear-gradient(90deg,var(--terracotta),var(--saffron));}
+.info-card:hover{transform:translateY(-5px);box-shadow:0 12px 36px rgba(30,15,0,.1);}
+.info-card .icon{font-size:2.2rem;margin-bottom:.75rem;}
+.info-card h3{font-family:'Libre Baskerville',serif;font-size:.95rem;color:var(--brown);font-weight:700;margin-bottom:.5rem;}
+.info-card p{font-size:.875rem;color:#6B4C2A;line-height:1.8;}
+.info-card a{color:var(--saffron);text-decoration:none;font-weight:700;}
+.info-card a:hover{color:var(--terracotta);}
+
+/* MENU */
+.menu-sec{position:relative;overflow:hidden;}
+.menu-sec .bg{position:absolute;inset:0;z-index:0;}
+.menu-sec>.container{position:relative;z-index:1;}
+.menu-tabs{display:flex;justify-content:center;flex-wrap:wrap;gap:.6rem;margin-bottom:2.5rem;}
+.tab-btn{padding:.45rem 1.3rem;border-radius:3px;border:1.5px solid rgba(201,168,76,.4);background:rgba(201,168,76,.08);color:rgba(255,255,255,.65);font-size:.82rem;font-weight:600;cursor:pointer;transition:all .2s;font-family:'Noto Sans TC',sans-serif;}
+.tab-btn.active,.tab-btn:hover{background:var(--saffron);border-color:var(--saffron);color:#fff;}
+.menu-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(270px,1fr));gap:1.2rem;}
+.menu-card{background:rgba(255,248,240,.07);border:1px solid rgba(201,168,76,.2);backdrop-filter:blur(8px);border-radius:3px;padding:1.2rem 1.4rem;display:flex;align-items:center;gap:1rem;transition:background .2s,transform .2s;}
+.menu-card:hover{background:rgba(255,248,240,.13);transform:translateX(4px);}
+.menu-emoji{font-size:2rem;flex-shrink:0;width:40px;text-align:center;}
+.menu-info h4{font-family:'Libre Baskerville',serif;font-size:.92rem;color:var(--gold-light);font-weight:700;margin-bottom:.2rem;}
+.menu-info p{font-size:.78rem;color:rgba(255,255,255,.5);line-height:1.5;}
+.menu-price{margin-left:auto;flex-shrink:0;font-weight:700;color:var(--gold-light);font-size:.95rem;background:rgba(201,168,76,.15);padding:.25rem .6rem;border-radius:3px;}
+
+/* ORDER */
+.order-sec{background:var(--warm-white);position:relative;}
+.order-sec::before{content:'';position:absolute;top:0;left:0;right:0;height:5px;background:linear-gradient(90deg,var(--deep-red),var(--saffron),var(--gold),var(--saffron),var(--deep-red));}
+.order-wrap{max-width:640px;margin:0 auto;background:#fff;border-radius:3px;border:1px solid rgba(201,168,76,.3);overflow:hidden;box-shadow:0 8px 48px rgba(30,15,0,.1);}
+.order-header{padding:1.5rem 2rem;background:linear-gradient(135deg,var(--deep-red),var(--terracotta));text-align:center;}
+.order-header h3{font-family:'Cinzel Decorative',serif;color:var(--gold-light);font-size:1.1rem;margin-bottom:.25rem;}
+.order-header p{color:rgba(255,255,255,.7);font-size:.8rem;}
+.order-body{padding:2rem;}
+.form-row{display:grid;grid-template-columns:1fr 1fr;gap:1rem;}
+.form-group{margin-bottom:1.2rem;}
+.form-group label{display:block;font-size:.78rem;font-weight:700;color:var(--brown);margin-bottom:.35rem;letter-spacing:.5px;text-transform:uppercase;}
+.form-group input,.form-group select,.form-group textarea{width:100%;padding:.65rem 1rem;border:1.5px solid rgba(201,168,76,.35);border-radius:3px;font-size:.88rem;font-family:'Noto Sans TC',sans-serif;color:var(--dark);background:var(--cream);outline:none;transition:border-color .2s,box-shadow .2s;}
+.form-group input:focus,.form-group select:focus,.form-group textarea:focus{border-color:var(--saffron);box-shadow:0 0 0 3px rgba(212,128,26,.15);}
+.form-group textarea{resize:vertical;min-height:75px;}
+.btn-submit{width:100%;padding:.9rem;background:linear-gradient(135deg,var(--deep-red),var(--saffron));color:#fff;border:none;border-radius:3px;font-size:1rem;font-weight:700;cursor:pointer;letter-spacing:1px;transition:all .25s;font-family:'Noto Sans TC',sans-serif;box-shadow:0 4px 20px rgba(139,46,26,.35);}
+.btn-submit:hover{transform:translateY(-2px);box-shadow:0 8px 28px rgba(139,46,26,.45);}
+.order-note{text-align:center;font-size:.78rem;color:#8B6A4A;margin-top:1rem;}
+.order-note a{color:var(--saffron);text-decoration:none;font-weight:600;}
+.order-success{display:none;text-align:center;padding:2.5rem;}
+.order-success .check{font-size:3.5rem;margin-bottom:1rem;}
+.order-success h3{font-family:'Cinzel Decorative',serif;color:var(--terracotta);margin-bottom:.5rem;font-size:1.1rem;}
+.order-success p{color:#6B4C2A;font-size:.88rem;line-height:1.9;}
+
+/* MAP */
+.map-sec{background:var(--dark2);padding-bottom:0;}
+.map-wrap{border-radius:3px;overflow:hidden;max-width:1000px;margin:0 auto;border:2px solid rgba(201,168,76,.3);box-shadow:0 8px 40px rgba(0,0,0,.4);}
+.map-wrap iframe{width:100%;height:380px;display:block;border:none;}
+.map-action{text-align:center;margin-top:1.5rem;padding-bottom:1rem;}
+
+/* FOOTER */
+footer{position:relative;overflow:hidden;padding:4rem 1.5rem 2rem;text-align:center;}
+footer .batik-bg{position:absolute;inset:0;z-index:0;}
+footer::before{content:'';position:absolute;top:0;left:0;right:0;height:5px;background:linear-gradient(90deg,var(--deep-red),var(--saffron),var(--gold),var(--saffron),var(--deep-red));z-index:2;}
+.footer-content{position:relative;z-index:1;}
+.footer-logo{font-family:'Cinzel Decorative',serif;font-size:1.7rem;font-weight:900;color:var(--gold-light);margin-bottom:.3rem;}
+.footer-id{font-family:'Libre Baskerville',serif;font-style:italic;color:rgba(255,255,255,.4);font-size:.85rem;letter-spacing:2px;margin-bottom:2.5rem;}
+.footer-grid{display:flex;flex-wrap:wrap;justify-content:center;gap:2rem 3rem;margin-bottom:2.5rem;}
+.footer-col h4{font-size:.72rem;letter-spacing:3px;text-transform:uppercase;color:var(--gold);margin-bottom:.75rem;font-weight:700;}
+.footer-col p,.footer-col a{font-size:.875rem;line-height:1.9;color:rgba(255,255,255,.6);text-decoration:none;display:block;}
+.footer-col a:hover{color:var(--gold-light);}
+.footer-divider{height:1px;max-width:400px;margin:0 auto 1.5rem;background:linear-gradient(90deg,transparent,rgba(201,168,76,.4),transparent);}
+.footer-bottom{font-size:.75rem;color:rgba(255,255,255,.25);}
+
+/* FLOAT */
+.float-call{position:fixed;bottom:1.5rem;right:1.5rem;z-index:50;background:linear-gradient(135deg,var(--terracotta),var(--saffron));color:#fff;width:58px;height:58px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:1.5rem;box-shadow:0 6px 24px rgba(184,92,56,.5);text-decoration:none;transition:transform .2s;animation:pulse 2.5s infinite;}
+@keyframes pulse{0%,100%{box-shadow:0 6px 24px rgba(184,92,56,.5);}50%{box-shadow:0 6px 32px rgba(184,92,56,.8),0 0 0 8px rgba(184,92,56,.15);}}
+.float-call:hover{transform:scale(1.1);}
+
+/* FADE */
+.fade-in{opacity:0;transform:translateY(28px);transition:opacity .65s ease,transform .65s ease;}
+.fade-in.visible{opacity:1;transform:none;}
+
+@media(max-width:640px){
+  .nav-links{display:none;}
+  .hamburger{display:flex;}
+  .form-row{grid-template-columns:1fr;}
+  .order-body{padding:1.5rem;}
+  section{padding:3.5rem 1.25rem;}
+}
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav id="mainNav">
+  <div class="nav-logo">🪔 印尼美食</div>
+  <ul class="nav-links">
+    <li><a href="file:///C:/Users/user/Downloads/indonesian_restaurant_4.html#info">資訊</a></li>
+    <li><a href="file:///C:/Users/user/Downloads/indonesian_restaurant_4.html#menu">菜單</a></li>
+    <li><a href="file:///C:/Users/user/Downloads/indonesian_restaurant_4.html#order">預訂便當</a></li>
+    <li><a href="file:///C:/Users/user/Downloads/indonesian_restaurant_4.html#map">地圖</a></li>
+    <li><a href="file:///C:/Users/user/Downloads/indonesian_restaurant_4.html#contact">聯絡</a></li>
+  </ul>
+  <button class="hamburger" id="hamBtn" aria-label="選單"><span></span><span></span><span></span></button>
+</nav>
+<div class="mobile-menu" id="mobileMenu">
+  <a href="file:///C:/Users/user/Downloads/indonesian_restaurant_4.html#info" onclick="closeMobile()">📍 基本資訊</a>
+  <a href="file:///C:/Users/user/Downloads/indonesian_restaurant_4.html#menu" onclick="closeMobile()">🍛 菜單</a>
+  <a href="file:///C:/Users/user/Downloads/indonesian_restaurant_4.html#order" onclick="closeMobile()">📦 預訂便當</a>
+  <a href="file:///C:/Users/user/Downloads/indonesian_restaurant_4.html#map" onclick="closeMobile()">🗺️ 地圖</a>
+  <a href="file:///C:/Users/user/Downloads/indonesian_restaurant_4.html#contact" onclick="closeMobile()">📞 聯絡我們</a>
+</div>
+
+<!-- HERO -->
+<div class="hero">
+  <div class="hero-bg"></div>
+  <div class="hero-wave">
+    <svg viewBox="0 0 1440 80" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="none">
+      <path d="M0,40 C240,80 480,0 720,40 C960,80 1200,0 1440,40 L1440,80 L0,80 Z" fill="#FDF3E3"></path>
+    </svg>
+  </div>
+  <div class="hero-content">
+    <div class="hero-ornament">🪔</div>
+    <div class="hero-badge">🇮🇩 &nbsp;Masakan Indonesia Asli&nbsp; 🇮🇩</div>
+    <h1>印尼美食</h1>
+    <div class="hero-id">Cita Rasa Nusantara</div>
+    <p class="hero-sub">道地南洋風味 · 彰化縣福興鄉</p>
+    <div class="hero-cta">
+      <a href="file:///C:/Users/user/Downloads/indonesian_restaurant_4.html#menu" class="btn btn-gold">🍛 查看菜單</a>
+      <a href="file:///C:/Users/user/Downloads/indonesian_restaurant_4.html#order" class="btn btn-outline-w">📦 預訂便當</a>
+    </div>
+  </div>
+</div>
+
+<!-- INFO -->
+<section class="info-sec" id="info">
+  <div class="container">
+    <div class="sec-head fade-in">
+      <div class="sec-kicker">Informasi Restoran</div>
+      <h2 class="sec-title">基本資訊</h2>
+      <div class="orn-line"><span>✦</span></div>
+    </div>
+    <div class="info-grid fade-in">
+      <div class="info-card">
+        <div class="icon">📍</div>
+        <h3>地址</h3>
+        <p>506 彰化縣福興鄉<br>彰水路 184 號</p>
+      </div>
+      <div class="info-card">
+        <div class="icon">📞</div>
+        <h3>電話預訂</h3>
+        <p><a href="tel:+886906137746">0906-137-746</a></p>
+      </div>
+      <div class="info-card">
+        <div class="icon">🕐</div>
+        <h3>營業時間</h3>
+        <p>週一至週五<br>10:00 – 20:00<br><br>週六日<br>10:00 – 18:00</p>
+      </div>
+      <div class="info-card">
+        <div class="icon">⭐</div>
+        <h3>顧客好評</h3>
+        <p>「份量足夠，炸雞腿酥脆好吃，態度親切實惠」<br><br>★★★★★ 5.0 / 5</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- MENU -->
+<section class="menu-sec" id="menu">
+  <div class="batik-bg bg"></div>
+  <div class="container">
+    <div class="sec-head fade-in">
+      <div class="sec-kicker" style="color:var(--gold)">Menu Pilihan</div>
+      <h2 class="sec-title light">精選菜單</h2>
+      <div class="orn-line"><span>✦</span></div>
+      <p style="color:rgba(255,255,255,.45);font-size:.82rem;margin-top:.75rem;">以下為參考菜色，實際供應以當日為主</p>
+    </div>
+    <div class="menu-tabs">
+      <button class="tab-btn active" data-cat="all">全部</button>
+      <button class="tab-btn" data-cat="rice">飯類</button>
+      <button class="tab-btn" data-cat="noodle">麵類</button>
+      <button class="tab-btn" data-cat="fried">炸物</button>
+      <button class="tab-btn" data-cat="drink">飲品</button>
+    </div>
+    <div class="menu-grid fade-in" id="menuGrid"><div class="menu-card"><div class="menu-emoji">🍛</div><div class="menu-info"><h4>印尼炒飯 Nasi Goreng</h4><p>傳統香料炒飯，附荷包蛋與蝦片</p></div><div class="menu-price">$80</div></div><div class="menu-card"><div class="menu-emoji">🍚</div><div class="menu-info"><h4>椰漿飯 Nasi Lemak</h4><p>椰香米飯配辣醬花生沙丁魚</p></div><div class="menu-price">$90</div></div><div class="menu-card"><div class="menu-emoji">🥩</div><div class="menu-info"><h4>仁當牛肉 Rendang Sapi</h4><p>慢燉辣味椰汁牛肉，香濃入味</p></div><div class="menu-price">$120</div></div><div class="menu-card"><div class="menu-emoji">🍖</div><div class="menu-info"><h4>炸雞便當 Ayam Goreng</h4><p>峇里島秘製香料，外酥內嫩</p></div><div class="menu-price">$110</div></div><div class="menu-card"><div class="menu-emoji">🍜</div><div class="menu-info"><h4>印尼炒麵 Mie Goreng</h4><p>彈Q炒麵配蔬菜荷包蛋</p></div><div class="menu-price">$80</div></div><div class="menu-card"><div class="menu-emoji">🍝</div><div class="menu-info"><h4>椰汁湯麵 Mie Kuah Santan</h4><p>濃郁椰汁湯底，鮮蝦配料</p></div><div class="menu-price">$100</div></div><div class="menu-card"><div class="menu-emoji">🍗</div><div class="menu-info"><h4>炸雞腿 Ayam Goreng Renyah</h4><p>酥脆多汁，顧客最愛招牌</p></div><div class="menu-price">$70</div></div><div class="menu-card"><div class="menu-emoji">🥩</div><div class="menu-info"><h4>沙嗲串燒 Sate</h4><p>花生醬搭配香料烤肉串</p></div><div class="menu-price">$60</div></div><div class="menu-card"><div class="menu-emoji">🥜</div><div class="menu-info"><h4>辣花生蝦片 Kerupuk</h4><p>酥脆蝦片配自製辣花生醬</p></div><div class="menu-price">$45</div></div><div class="menu-card"><div class="menu-emoji">🥤</div><div class="menu-info"><h4>印尼草本茶 Jamu</h4><p>傳統香草草本冷飲，清涼養生</p></div><div class="menu-price">$40</div></div><div class="menu-card"><div class="menu-emoji">🥥</div><div class="menu-info"><h4>椰子汁 Es Kelapa</h4><p>新鮮椰子，清涼解渴</p></div><div class="menu-price">$50</div></div><div class="menu-card"><div class="menu-emoji">☕</div><div class="menu-info"><h4>南洋咖啡 Kopi Susu</h4><p>濃縮咖啡加煉乳，香甜濃郁</p></div><div class="menu-price">$45</div></div></div>
+  </div>
+</section>
+
+<!-- ORDER -->
+<section class="order-sec" id="order">
+  <div class="container">
+    <div class="sec-head fade-in">
+      <div class="sec-kicker">Pesan Nasi Kotak</div>
+      <h2 class="sec-title">便當預訂</h2>
+      <div class="orn-line"><span>✦</span></div>
+      <p style="color:#6B4C2A;font-size:.85rem;margin-top:.75rem;">建議提前一天預訂，讓我們為您準備最新鮮的料理</p>
+    </div>
+    <div class="order-wrap fade-in">
+      <div class="order-header">
+        <h3>🍱 填寫預訂資料</h3>
+        <p>填妥後送出，我們將盡快與您確認</p>
+      </div>
+      <div class="order-body">
+        <div id="orderFormInner">
+          <div class="form-row">
+            <div class="form-group"><label>姓名 *</label><input type="text" id="f-name" placeholder="您的大名"></div>
+            <div class="form-group"><label>電話 *</label><input type="tel" id="f-phone" placeholder="0906-137-746"></div>
+          </div>
+          <div class="form-row">
+            <div class="form-group"><label>取餐日期 *</label><input type="date" id="f-date" min="2026-03-21"></div>
+            <div class="form-group"><label>取餐時間</label>
+              <select id="f-time">
+                <option>11:00</option><option>11:30</option><option>12:00</option>
+                <option>12:30</option><option>17:00</option><option>17:30</option><option>18:00</option>
+              </select>
+            </div>
+          </div>
+          <div class="form-group"><label>選擇便當</label>
+            <select id="f-item">
+              <option>印尼炒飯便當 Nasi Goreng</option>
+              <option>峇里島炸雞便當 Ayam Goreng</option>
+              <option>仁當牛肉便當 Rendang Sapi</option>
+              <option>沙嗲豬肉串便當 Sate Babi</option>
+              <option>蝦醬空心菜便當 Kangkung Belacan</option>
+              <option>椰汁咖哩便當 Kari Santan</option>
+            </select>
+          </div>
+          <div class="form-row">
+            <div class="form-group"><label>數量</label><input type="number" id="f-qty" min="1" max="50" value="1"></div>
+            <div class="form-group"><label>取餐方式</label>
+              <select id="f-pickup"><option>自取</option><option>外送（另詢）</option></select>
+            </div>
+          </div>
+          <div class="form-group"><label>備註</label><textarea id="f-note" placeholder="過敏食材、口味調整、加點..."></textarea></div>
+          <button class="btn-submit" onclick="submitOrder()">🍱 &nbsp;送出預訂</button>
+          <p class="order-note">📞 亦可直接來電：<a href="tel:+886906137746">0906-137-746</a></p>
+        </div>
+        <div class="order-success" id="orderSuccess">
+          <div class="check">🎉</div>
+          <h3>Terima Kasih!</h3>
+          <p>預訂成功，感謝您！<br>我們將盡快來電確認。<br><br>如需變更請來電<br><a href="tel:+886906137746" style="color:var(--saffron);font-weight:700;">0906-137-746</a></p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- MAP -->
+<section class="map-sec" id="map">
+  <div class="container">
+    <div class="sec-head fade-in">
+      <div class="sec-kicker" style="color:var(--gold)">Lokasi Kami</div>
+      <h2 class="sec-title light">交通位置</h2>
+      <div class="orn-line"><span>✦</span></div>
+    </div>
+    <div class="map-wrap fade-in">
+      <iframe src="./index_files/embed.html" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade" title="印尼美食位置"></iframe>
+    </div>
+    <div class="map-action">
+      <a href="https://maps.google.com/?q=24.0145723,120.4875507" target="_blank" class="btn btn-gold">📍 在 Google Maps 開啟</a>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer id="contact">
+  <div class="batik-bg"></div>
+  <div class="footer-content">
+    <div class="footer-logo">🪔 印尼美食</div>
+    <div class="footer-id">Masakan Indonesia Asli · 彰化福興</div>
+    <div class="footer-grid">
+      <div class="footer-col">
+        <h4>地址</h4>
+        <p>506 彰化縣福興鄉<br>彰水路 184 號</p>
+      </div>
+      <div class="footer-col">
+        <h4>聯絡</h4>
+        <a href="tel:+886906137746">📞 0906-137-746</a>
+      </div>
+      <div class="footer-col">
+        <h4>營業時間</h4>
+        <p>週一至週五 10:00 – 20:00</p>
+        <p>週六日 10:00 – 18:00</p>
+      </div>
+      <div class="footer-col">
+        <h4>快速連結</h4>
+        <a href="file:///C:/Users/user/Downloads/indonesian_restaurant_4.html#menu">菜單 Menu</a>
+        <a href="file:///C:/Users/user/Downloads/indonesian_restaurant_4.html#order">預訂便當</a>
+        <a href="file:///C:/Users/user/Downloads/indonesian_restaurant_4.html#map">交通位置</a>
+      </div>
+    </div>
+    <div class="footer-divider"></div>
+    <p class="footer-bottom">© 2025 印尼美食 彰化福興店 · Semua hak dilindungi</p>
+  </div>
+</footer>
+
+<a href="tel:+886906137746" class="float-call" title="立即來電">📞</a>
+
+<script>
+const menu=[
+  {cat:'rice',emoji:'🍛',name:'印尼炒飯 Nasi Goreng',desc:'傳統香料炒飯，附荷包蛋與蝦片',price:'$80'},
+  {cat:'rice',emoji:'🍚',name:'椰漿飯 Nasi Lemak',desc:'椰香米飯配辣醬花生沙丁魚',price:'$90'},
+  {cat:'rice',emoji:'🥩',name:'仁當牛肉 Rendang Sapi',desc:'慢燉辣味椰汁牛肉，香濃入味',price:'$120'},
+  {cat:'rice',emoji:'🍖',name:'炸雞便當 Ayam Goreng',desc:'峇里島秘製香料，外酥內嫩',price:'$110'},
+  {cat:'noodle',emoji:'🍜',name:'印尼炒麵 Mie Goreng',desc:'彈Q炒麵配蔬菜荷包蛋',price:'$80'},
+  {cat:'noodle',emoji:'🍝',name:'椰汁湯麵 Mie Kuah Santan',desc:'濃郁椰汁湯底，鮮蝦配料',price:'$100'},
+  {cat:'fried',emoji:'🍗',name:'炸雞腿 Ayam Goreng Renyah',desc:'酥脆多汁，顧客最愛招牌',price:'$70'},
+  {cat:'fried',emoji:'🥩',name:'沙嗲串燒 Sate',desc:'花生醬搭配香料烤肉串',price:'$60'},
+  {cat:'fried',emoji:'🥜',name:'辣花生蝦片 Kerupuk',desc:'酥脆蝦片配自製辣花生醬',price:'$45'},
+  {cat:'drink',emoji:'🥤',name:'印尼草本茶 Jamu',desc:'傳統香草草本冷飲，清涼養生',price:'$40'},
+  {cat:'drink',emoji:'🥥',name:'椰子汁 Es Kelapa',desc:'新鮮椰子，清涼解渴',price:'$50'},
+  {cat:'drink',emoji:'☕',name:'南洋咖啡 Kopi Susu',desc:'濃縮咖啡加煉乳，香甜濃郁',price:'$45'},
+];
+function renderMenu(cat){
+  const g=document.getElementById('menuGrid');
+  const items=cat==='all'?menu:menu.filter(m=>m.cat===cat);
+  g.innerHTML=items.map(m=>`<div class="menu-card"><div class="menu-emoji">${m.emoji}</div><div class="menu-info"><h4>${m.name}</h4><p>${m.desc}</p></div><div class="menu-price">${m.price}</div></div>`).join('');
+}
+renderMenu('all');
+document.querySelectorAll('.tab-btn').forEach(b=>{
+  b.addEventListener('click',()=>{
+    document.querySelectorAll('.tab-btn').forEach(x=>x.classList.remove('active'));
+    b.classList.add('active');renderMenu(b.dataset.cat);
+  });
+});
+function submitOrder(){
+  if(!document.getElementById('f-name').value.trim()||!document.getElementById('f-phone').value.trim()||!document.getElementById('f-date').value){alert('請填寫姓名、電話和取餐日期 ✦');return;}
+  document.getElementById('orderFormInner').style.display='none';
+  document.getElementById('orderSuccess').style.display='block';
+}
+const di=document.getElementById('f-date');
+const tm=new Date();tm.setDate(tm.getDate()+1);
+di.min=tm.toISOString().split('T')[0];
+document.getElementById('hamBtn').addEventListener('click',()=>document.getElementById('mobileMenu').classList.toggle('open'));
+function closeMobile(){document.getElementById('mobileMenu').classList.remove('open');}
+window.addEventListener('scroll',()=>document.getElementById('mainNav').classList.toggle('scrolled',window.scrollY>50));
+const obs=new IntersectionObserver(es=>{es.forEach(e=>{if(e.isIntersecting)e.target.classList.add('visible');});},{threshold:.1});
+document.querySelectorAll('.fade-in').forEach(el=>obs.observe(el));
+</script>
+
+
+</body></html>
